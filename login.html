@@ -1,5 +1,3 @@
-{% extends 'header.html' %}
-{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +7,7 @@
 <body>
 <center>
 		<h1><b>Login</b></h1>
-		{% if msg %}
-			<b style="color:red;">{{msg}}</b>
-		{% endif %}
 		<form name="login" method="post" action="{% url 'login' %}">
-		{% csrf_token %}
 			<table>
 				<tr>
 					<td>Email</td>
@@ -29,10 +23,8 @@
 				
 				<tr>
 					<td>
-						<input type="submit" name="action" value="Login" class="btn btn-primary">
-					</td>
-					<td>
-						<a href="{% url 'forgot_password' %}"><input type="button" name="action" value="Forgot Password" class="btn btn-primary">
+						<a href="index.html">
+							<input type="button" name="action" value="Login" class="btn btn-primary">
 						</a>
 					</td>
 				</tr>
@@ -41,4 +33,3 @@
 </center>
 </body>
 </html>
-{% endblock %}
