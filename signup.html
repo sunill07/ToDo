@@ -1,5 +1,3 @@
-{% extends 'header.html' %}
-{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,12 +7,8 @@
 <body>
 <center>
 		<h1><b>Sign Up</b></h1>
-			{% if msg %}
-				<b style="color:red;">{{msg}}</b>
-			{% endif %}
 		<form name="signup" method="post" action="{% url 'signup' %}"
 		enctype="multipart/form-data">
-			{% csrf_token %}
 			<table>
 				<tr>
 					<td>First Name</td>
@@ -59,8 +53,10 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center">
-						<input type="submit" name="action" value="Sign Up" class="btn btn-primary">
+					<td>
+						<a href="login.html">
+							<input type="button" name="action" value="Sign Up" class="btn btn-primary">
+						</a>
 					</td>
 				</tr>
 			</table>
@@ -68,4 +64,3 @@
 </center>
 </body>
 </html>
-{% endblock %}
